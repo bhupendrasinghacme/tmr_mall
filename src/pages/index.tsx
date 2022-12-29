@@ -82,6 +82,7 @@ const IndexPage: React.FC<{}> = () => (
 					<CategoryBlocks categoryBlock={categoryBlock} />
 					<FeaturedProducts />
 					<TrendingProducts />
+
 					<HowItWorks
 						howItWorksTitle={howItWorksTitle}
 						howItWorksSubtitle={howItWorksSubtitle}
