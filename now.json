@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "env": {
+    "GATSBY_SHOP_NAME": "tmr-malls",
+    "GATSBY_SHOPIFY_ACCESS_TOKEN": "1258ea85b98def4aaa71f462bd9c46cc",
+    "GATSBY_PRISMIC_REPOSITORY": "tmrmall"
+  },
+  "build": {
+    "env": {
+      "GATSBY_SHOP_NAME": "tmr-malls",
+      "GATSBY_SHOPIFY_ACCESS_TOKEN": "1258ea85b98def4aaa71f462bd9c46cc",
+      "GATSBY_PRISMIC_REPOSITORY": "tmrmall"
+    }
+  }
+}
