@@ -127,6 +127,7 @@ const MainMenu: React.FC<{ onClick?: () => void; pathPrefix?: string }> = ({
 								key={item.title}
 								sx={styles.mainMenuItem}
 							>
+
 								{item?.submenu ? (
 									<Text as="span">{item.title}</Text>
 								) : (
@@ -138,6 +139,7 @@ const MainMenu: React.FC<{ onClick?: () => void; pathPrefix?: string }> = ({
 										{item.title}
 									</Link>
 								)}
+
 
 								{item?.submenu && <IoIosArrowDown />}
 
@@ -157,8 +159,16 @@ const MainMenu: React.FC<{ onClick?: () => void; pathPrefix?: string }> = ({
 										))}
 									</Box>
 								)}
+
 							</Box>
+
 						))}
+					<Link
+						activeClassName="active"
+						to="/products/"
+					>
+						All Products
+					</Link>
 				</Box>
 			);
 		}}
