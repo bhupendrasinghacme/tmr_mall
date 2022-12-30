@@ -7,6 +7,7 @@ import CartStatus from '../../cart/index';
 import Container from '../../container/container';
 import Header from './header/header';
 import Footer from './footer/footer';
+import FooterMenu from './footer/FooterMenu';
 import styles from './primary.style';
 
 const PrimaryLayout: React.FunctionComponent<{
@@ -46,7 +47,9 @@ const PrimaryLayout: React.FunctionComponent<{
 			>
 				<CartStatus btnProps={cartBtnProps} />
 			</animated.div>
+			<FooterMenu />
 			<Footer fluid={fluid} />
+
 		</Box>
 	);
 };
