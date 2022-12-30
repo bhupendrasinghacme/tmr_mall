@@ -5,7 +5,7 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: `TMR Mall.`,
+    title: `TMR Mall`,
     description: `Kick off your next jamstack ecommerce web app with this PICKSY.`,
     author: `@redq`,
   },

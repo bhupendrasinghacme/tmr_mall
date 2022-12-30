@@ -41,16 +41,16 @@ const FooterMenu: React.FC<{ fluid?: boolean }> = ({ fluid }) => (
     <StaticQuery<GatsbyTypes.Query>
         query={`${footerStaticQuery}`}
         render={(data) => {
-            data.prismic.allFooters.edges?.map((item: any, i: any) => {
-                console.log("data product=====>", item.node.footer_menu)
-            })
+            // data.prismic.allFooters.edges?.map((item: any, i: any) => {
+            //     console.log("data product=====>", item.node.footer_menu)
+            // })
             return (
                 // const footerData = get(data, 'prismic.allFooters.edges[0].node');
                 <div>
                     {
                         data.prismic.allFooters.edges?.map((item: any, i: any) => {
                             return (
-                                <div>
+                                <div key={i}>
                                     <h1>{item.node.menu_heading[0].text}</h1>
 
                                 </div>
