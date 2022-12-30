@@ -1,11 +1,6 @@
 /** @jsx jsx */
-import { StaticQuery, graphql } from 'gatsby';
-import get from 'lodash/get';
-import { RichText } from 'prismic-reactjs';
+import { Link, StaticQuery, graphql } from 'gatsby';
 import { Box, Text, jsx } from 'theme-ui';
-import Container from '../../../container/container';
-import SocialLinks from '../../../social-links/social-links';
-import styles from './footer.styles';
 
 const footerStaticQuery = graphql`
 	query {
@@ -41,18 +36,20 @@ const FooterMenu: React.FC<{ fluid?: boolean }> = ({ fluid }) => (
     <StaticQuery<GatsbyTypes.Query>
         query={`${footerStaticQuery}`}
         render={(data) => {
-            // data.prismic.allFooters.edges?.map((item: any, i: any) => {
-            //     console.log("data product=====>", item.node.footer_menu)
-            // })
+            console.log("product data ===========>",data.prismic.allFooters.edges);
             return (
-                // const footerData = get(data, 'prismic.allFooters.edges[0].node');
                 <div>
                     {
                         data.prismic.allFooters.edges?.map((item: any, i: any) => {
                             return (
                                 <div key={i}>
-                                    <h1>{item.node.menu_heading[0].text}</h1>
-
+                                    <h4>{item.node.menu_heading[0].text}</h4>
+                                {item.node.footer_menu.map((item2:any,index1:any)=>{
+                                    return (
+                                        <Link to={getTitleData(item.node.footer_menu)}><p key={index1}>{item2.title[0].text}</p></Link>
+                                    )
+                                    })
+}
                                 </div>
 
                             )
@@ -60,19 +57,6 @@ const FooterMenu: React.FC<{ fluid?: boolean }> = ({ fluid }) => (
                     }
                 </div>
             )
-
-            // const socialData = getTitleData(footerData.footer_menu);
-            // return (
-            //     <h1>{footerData.menu_heading[0].text}</h1>
-            // <Box as="footer" sx={styles.footer}>
-            //     <Container fluid={fluid}>
-            //         <Text className="copyright" sx={styles.copyright}>
-            //             {RichText.render(footerData.copyright_text)}
-            //         </Text>
-            //         <SocialLinks items={socialData} />
-            //     </Container>
-            // </Box>
-            // );
         }}
     />
 );
