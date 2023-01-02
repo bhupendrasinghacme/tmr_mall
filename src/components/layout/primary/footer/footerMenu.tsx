@@ -7,7 +7,7 @@ const footerStaticQuery = graphql`
 		prismic {
 			allFooters {
 				edges {
-					node {
+					node {  
                          menu_heading 
                             footer_menu {
                                 title_link{
