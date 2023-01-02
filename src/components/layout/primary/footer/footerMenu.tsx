@@ -46,12 +46,11 @@ const FooterMenu: React.FC<{ fluid?: boolean }> = ({ fluid }) => (
                                     <h4>{item.node.menu_heading[0].text}</h4>
                                 {item.node.footer_menu.map((item2:any,index1:any)=>{
                                     return (
-                                        <Link to={getTitleData(item.node.footer_menu)}><p key={index1}>{item2.title[0].text}</p></Link>
+                                        <Link to={getTitleData(item.node.footer_menu).link}><p key={index1}>{item2.title[0].text}</p></Link>
                                     )
                                     })
-}
+                                   }
                                 </div>
-
                             )
                         })
                     }
