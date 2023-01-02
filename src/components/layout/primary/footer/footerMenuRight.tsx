@@ -1,23 +1,8 @@
 /** @jsx jsx */
+import SocialLinks from '../../../social-links/social-links';
 import { Link, StaticQuery, graphql } from 'gatsby';
 import { Box, Text, jsx } from 'theme-ui';
 
-import React from 'react';
-import {
-    FaFacebookSquare,
-    FaTwitter,
-    FaYoutube,
-    FaGithub,
-    FaInstagram,
-    FaLinkedin,
-} from 'react-icons/fa';
-
-type PropsType = {
-    item: {
-        type: string;
-        link: string;
-    };
-};
 
 const footerStaticQuery = graphql`
 	query {
@@ -37,6 +22,20 @@ const footerStaticQuery = graphql`
 					}
 				}
 			}
+            	allCommons {
+				edges {
+					node {
+						social_links {
+							social_link {
+								... on PRISMIC__ExternalLink {
+									url
+								}
+							}
+							social_type
+						}
+					}
+				}
+			}
 		}
 	}
 `;
@@ -49,16 +48,28 @@ const getTitleData = (links) => {
     return data;
 };
 
+const getSocialData = (links) => {
+    const data = [];
+    links.forEach((link) => {
+        data.push({ type: link.social_type, link: link.social_link.url });
+    });
+    return data;
+};
+
 const footerMenuRight: React.FC<{ fluid?: boolean }> = ({ fluid }) => (
+
     <StaticQuery<GatsbyTypes.Query>
         query={`${footerStaticQuery}`}
         render={(data) => {
+            console.log("data>><<<<<", data.prismic.allCommons.edges?.map((item: any) => item.node));
+            // const footerData = get(data, 'prismic.allCommons.edges[0].node');
+            const socialData = getSocialData(data.prismic.allCommons.edges?.map((item: any) => item.node)[0].social_links);
             return (
 
                 <div>
                     {
                         data.prismic.allFooter_2s.edges?.map((item: any, i: any) => {
-                            console.log("data==>>", data)
+                            // console.log("data==>>", data)
                             return (
 
                                 <div key={i}>
@@ -76,120 +87,12 @@ const footerMenuRight: React.FC<{ fluid?: boolean }> = ({ fluid }) => (
                             )
                         })
                     }
+                    <SocialLinks items={socialData} />
                 </div >
             )
         }}
     />
 );
-
-const SocialLink: React.FC<PropsType> = ({ item }) => {
-    const type = item.type.toLowerCase();
-    const title = item.type.charAt(0).toUpperCase() + item.type.slice(1);
-
-    const LinkItem = () => {
-        switch (type) {
-            case 'facebook':
-                return (
-                    <>
-                        <a
-                            className={type}
-                            href={item.link}
-                            data-tip={title}
-                            title={title}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <FaFacebookSquare />
-                        </a>
-                    </>
-                );
-            case 'twitter':
-                return (
-                    <>
-                        <a
-                            className={type}
-                            href={item.link}
-                            data-tip={title}
-                            title={title}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <FaTwitter />
-                        </a>
-                    </>
-                );
-            case 'youtube':
-                return (
-                    <>
-                        <a
-                            className={type}
-                            href={item.link}
-                            data-tip={title}
-                            title={title}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <FaYoutube />
-                        </a>
-                    </>
-                );
-            case 'github':
-                return (
-                    <>
-                        <a
-                            className={type}
-                            href={item.link}
-                            data-tip={title}
-                            title={title}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <FaGithub />
-                        </a>
-                    </>
-                );
-            case 'instagram':
-                return (
-                    <>
-                        <a
-                            className={type}
-                            href={item.link}
-                            data-tip={title}
-                            title={title}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <FaInstagram />
-                        </a>
-                    </>
-                );
-            case 'linkedin':
-                return (
-                    <>
-                        <a
-                            className={type}
-                            href={item.link}
-                            data-tip={title}
-                            title={title}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <FaLinkedin />
-                        </a>
-                    </>
-                );
-
-            default:
-                return null;
-        }
-    };
-
-    return (
-        <>
-            <LinkItem />
-        </>
-    );
-};
 
 
 export default footerMenuRight;
