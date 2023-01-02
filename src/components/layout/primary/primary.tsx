@@ -9,6 +9,7 @@ import Header from './header/header';
 import Footer from './footer/footer';
 import FooterMenu from './footer/FooterMenu';
 import styles from './primary.style';
+import FooterMenuRight from './footer/footerMenuRight';
 
 const PrimaryLayout: React.FunctionComponent<{
 	fluid?: boolean;
@@ -47,7 +48,11 @@ const PrimaryLayout: React.FunctionComponent<{
 			>
 				<CartStatus btnProps={cartBtnProps} />
 			</animated.div>
-			<FooterMenu />
+			<div>
+				<FooterMenu />
+				<FooterMenuRight />
+			</div>
+
 			<Footer fluid={fluid} />
 
 		</Box>

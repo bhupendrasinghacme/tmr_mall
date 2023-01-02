@@ -15,13 +15,15 @@ const footerStaticQuery = graphql`
 									url
 								    }
                                 }
-                                title
+                                title   
                             }
 					}
 				}
 			}
 		}
 	}
+
+    
 `;
 
 const getTitleData = (links) => {
@@ -36,7 +38,6 @@ const FooterMenu: React.FC<{ fluid?: boolean }> = ({ fluid }) => (
     <StaticQuery<GatsbyTypes.Query>
         query={`${footerStaticQuery}`}
         render={(data) => {
-            console.log("product data ===========>", data.prismic.allFooters.edges);
             return (
                 <div>
                     {
@@ -47,7 +48,9 @@ const FooterMenu: React.FC<{ fluid?: boolean }> = ({ fluid }) => (
                                     {item.node.footer_menu.map((item2: any, index1: any) => {
                                         let link_url = getTitleData(item.node.footer_menu);
                                         return (
-                                            <Link to={link_url[0].link}><p key={index1}>{item2.title[0].text}</p></Link>
+                                            <Link to={link_url[0].link}>
+                                                <p key={index1}>{item2.title[0].text}</p>
+                                            </Link>
                                         )
                                     })
                                     }
