@@ -1,8 +1,8 @@
 {
-	"name": "tmr_mall",
+	"name": "tmrmall",
 	"private": true,
 	"version": "1.2.0",
-	"author": "RedQ, Inc",
+	"author": "Nick Seth",
 	"scripts": {
 		"build": "gatsby build",
 		"develop": "gatsby develop",
