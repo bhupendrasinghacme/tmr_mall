@@ -52,9 +52,7 @@ const FooterMenu: React.FC<{ fluid?: boolean }> = ({ fluid }) => (
                             return (
                                 <div key={i}>
                                     <h1>{item.node.menu_heading[0].text}</h1>
-
                                 </div>
-
                             )
                         })
                     }
