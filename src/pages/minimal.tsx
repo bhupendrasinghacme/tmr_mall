@@ -55,7 +55,7 @@ const indexPageStaticQuery = graphql`
 			allCommons {
 				edges {
 					node {
-						ad_blocks {
+						ad_blocks { 
 							badge_title
 							badge_color
 							title

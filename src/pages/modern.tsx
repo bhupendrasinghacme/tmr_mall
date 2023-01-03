@@ -16,7 +16,7 @@ const modernPageStaticQuery = graphql`
 						banner_title
 						banner_subtitle
 						banner_image
-					}
+					} 
 				}
 			}
 			allCommons {
