@@ -32,6 +32,7 @@ const productStaticQuery = graphql`
 						originalSrc
 						localFile {
 							childImageSharp {
+								
 								fluid {
 									...GatsbyImageSharpFluid_withWebp_tracedSVG
 								}

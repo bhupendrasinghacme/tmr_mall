@@ -77,8 +77,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `TMR Mall`,
-        short_name: `TMR Mall`,
+        name: `tmrmall`,
+        short_name: `tmrmall`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#292929`,
