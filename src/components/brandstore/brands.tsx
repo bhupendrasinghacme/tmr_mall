@@ -51,7 +51,7 @@ const BrandStore = () => (
                                             return (
                                             
                                                 <Link to={getTitleData(item.node.brand_store).link}>
-                                                    <img className="footer_image" key={index1} src={item2.image.url} />
+                                                    <img className="brand_image" key={index1} src={item2.image.url} />
                                                 </Link>
                                         
                                                 )

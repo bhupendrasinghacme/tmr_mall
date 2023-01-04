@@ -11,6 +11,7 @@ import FeaturedProducts from '../components/featured-products/featured-products-
 import TrendingProducts from '../components/trending-products/trending-products-home';
 import CallusBanner from '../components/call-us-banner/call-us-banner';
 import BrandStore from '../components/brandstore/brands';
+import HomeCollection from '../components/customcollection/home-collection';
 
 
 const indexPageStaticQuery = graphql`
@@ -84,6 +85,7 @@ const IndexPage: React.FC<{}> = () => (
 					<CategoryBlocks categoryBlock={categoryBlock} />
 					<FeaturedProducts />
 					<TrendingProducts />
+					
 					<HowItWorks
 						howItWorksTitle={howItWorksTitle}
 						howItWorksSubtitle={howItWorksSubtitle}
@@ -95,6 +97,8 @@ const IndexPage: React.FC<{}> = () => (
 						callUsTitle={callUsTitle}
 						callUsButtonText={callUsButtonText}
 					/>
+					<CategoryBlocks categoryBlock={categoryBlock} />
+					<HomeCollection />
 					<BrandStore />
 				</PrimaryLayout>
 			);

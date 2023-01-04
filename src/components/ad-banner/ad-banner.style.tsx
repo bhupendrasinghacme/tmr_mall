@@ -1,6 +1,6 @@
 const styles = {
 	wrapper: {
-		display: 'grid',
+		display: 'grid', 
 		marginTop: '20px',
 		'.carousel-button-group': {
 			opacity: 0,
