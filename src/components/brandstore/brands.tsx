@@ -43,7 +43,6 @@ const BrandStore = () => (
                             data.prismic.allHomes.edges?.map((item: any, i: any) => {
                                 //console.log("data==>>soumys", data)
                                 return (
-
                                     <div key={i} className='home-brand--store'>
                                         <h1 className="title">{item.node.brand_store_heading[0].text}</h1>
                                         <div className='images_wrap'>
