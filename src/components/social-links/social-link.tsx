@@ -2,10 +2,12 @@ import React from 'react';
 import {
 	FaFacebookSquare,
 	FaTwitter,
+	FaPinterest,
 	FaYoutube,
 	FaGithub,
 	FaInstagram,
 	FaLinkedin,
+	
 } from 'react-icons/fa';
 
 type PropsType = {
@@ -48,6 +50,21 @@ const SocialLink: React.FC<PropsType> = ({ item }) => {
 							rel="noopener noreferrer"
 						>
 							<FaTwitter />
+						</a>
+					</>
+				);
+				case 'pinterest':
+				return (
+					<>
+						<a
+							className={type}
+							href={item.link}
+							data-tip={title}
+							title={title}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<FaPinterest />
 						</a>
 					</>
 				);

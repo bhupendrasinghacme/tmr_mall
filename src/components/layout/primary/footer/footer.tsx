@@ -44,7 +44,7 @@ const Footer: React.FC<{ fluid?: boolean }> = ({ fluid }) => (
 			const footerData = get(data, 'prismic.allCommons.edges[0].node');
 			const socialData = getSocialData(footerData.social_links);
 			return (
-				<Box as="footer" sx={styles.footer}>
+				<Box as="footer" className="last_footer" sx={styles.footer}>
 					<Container fluid={fluid}>
 						<Text className="copyright" sx={styles.copyright}>
 							{RichText.render(footerData.copyright_text)}
