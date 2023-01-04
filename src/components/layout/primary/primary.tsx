@@ -12,6 +12,7 @@ import styles from './primary.style';
 import bottomContent from './footer/bottomContent';
 import BottomContent from './footer/bottomContent';
 
+
 const PrimaryLayout: React.FunctionComponent<{
 	fluid?: boolean;
 	showNoticeBar?: boolean;
