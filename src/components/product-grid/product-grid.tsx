@@ -31,7 +31,7 @@ const ProductGrid: React.FC<PropsType> = ({
 	return (
 		<Box id={id} sx={styles.wrapper}>
 			<Flex sx={styles.header}>
-				{gridTitle && <Heading as="h3">{gridTitle}</Heading>}
+				{gridTitle && <Heading as="h1">{gridTitle}</Heading>}
 				{close && (
 					<Button variant="text" onClick={close}>
 						Clear

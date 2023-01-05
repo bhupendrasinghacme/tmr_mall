@@ -55,5 +55,5 @@ const LatestProductsHome = () => (
 		}}
 	/>
 );
-
+ 
 export default LatestProductsHome;

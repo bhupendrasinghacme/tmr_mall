@@ -8,8 +8,8 @@ const getCategoryData = (edges: any): any => {
 	edges.forEach((category: any, index: number) => {
 		data.push({
 			id: `category-${index}`,
-			heading: data.category_section_title,
 			title: category.category_title,
+			price: category.product_price,
 			thumbnail: category.imageSharp.childImageSharp.fluid,
 			path: category.category_slug,
 		});
@@ -19,20 +19,18 @@ const getCategoryData = (edges: any): any => {
 
 const CategoryBlocks = ({ categoryBlock }: any) => {
 	const categories = getCategoryData(categoryBlock);
-	console.log("CategoryBlocks",categories);
+	
 	return (
 	
 		<Box sx={styles.wrapper}> 
 			<Grid sx={styles.grid}>
 				{categories.map((item: any) => (
-					
 					<PrimaryCard
-					
-						key={`category-block--key${item.id}`}
+					 	key={`category-block--key${item.id}`}
 						path={item.path}
 						thumbnail={item.thumbnail}
 						title={item.title}
-						
+						price={item.price}
 					/>
 					
 				))}

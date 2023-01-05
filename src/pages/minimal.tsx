@@ -35,11 +35,10 @@ const indexPageStaticQuery = graphql`
 			allHomes {
 				edges {
 					node {
-						category_section_title
-						category_section_short_intro
 						category_block {
 							category_slug
 							category_title
+							product_price
 							image
 							imageSharp {
 								childImageSharp {
@@ -75,14 +74,14 @@ const IndexPage: React.FC<{}> = () => (
 	<StaticQuery<GatsbyTypes.Query>
 		query={`${indexPageStaticQuery}`}
 		render={(data) => {
-			const categorySectionTitle = get(
-				data,
-				'prismic.allHomes.edges[0].node.category_section_title'
-			);
-			const categorySectionIntro = get(
-				data,
-				'prismic.allHomes.edges[0].node.category_section_short_intro'
-			);
+			// const categorySectionTitle = get(
+			// 	data,
+			// 	'prismic.allHomes.edges[0].node.category_section_title'
+			// );
+			// const categorySectionIntro = get(
+			// 	data,
+			// 	'prismic.allHomes.edges[0].node.category_section_short_intro'
+			// );
 			const categoryItems = get(
 				data,
 				'prismic.allHomes.edges[0].node.category_block'
@@ -120,8 +119,8 @@ const IndexPage: React.FC<{}> = () => (
 					{/* End of how it works */}
 
 					<CategoryBlocks
-						title={categorySectionTitle}
-						shortIntro={categorySectionIntro}
+						// title={categorySectionTitle}
+						// shortIntro={categorySectionIntro}
 						categoryItems={categoryItems}
 					/>
 					{/* End of category blocks */}

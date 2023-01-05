@@ -9,7 +9,7 @@ const styles = {
 			gridTemplateColumns: '1fr 1fr',
 		},
 		'@media only screen and (min-width: 992px)': {
-			gridTemplateColumns: '1fr 1fr 1fr 1fr',
+			gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr 1fr',
 		},
 	},
 };
