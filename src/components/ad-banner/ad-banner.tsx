@@ -32,9 +32,9 @@ const AdBanner: React.FC<Props> = ({ data, scrollTo, scrollOffset }) => {
 			<Carousel ssr={true} responsive={responsive} gutter="10px">
 			
 				{data.map((item: any, index: number) => (
-					
+					// adblock-key
 					<AdBlock
-						// key={`adblock-key${index}`}
+						// key={`${index}`}
 						tag={item.badge_title}
 						tagBgColor={item.badge_color}
 						bannerImage={item.block_image?.url}

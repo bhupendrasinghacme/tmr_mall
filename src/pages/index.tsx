@@ -12,6 +12,7 @@ import TrendingProducts from '../components/trending-products/trending-products-
 import CallusBanner from '../components/call-us-banner/call-us-banner';
 import BrandSections from '../components/brandstore/brandss';
 import TrendingProductsHome from '../components/trending-products/trending-products-home';
+import AdBanner from "../components/ad-banner/ad-banner";
 
 
 const indexPageStaticQuery = graphql`
@@ -123,8 +124,17 @@ const indexPageStaticQuery = graphql`
 					 }
 					 image
 				 }
+				    slider_group {
+						badge_title
+						badge_color
+						title
+						image
+						short_description
+						add_a_button
+						button_title
 					}
 				}
+			 }
 			}
 		}
 	}
@@ -158,11 +168,13 @@ const IndexPage: React.FC<{}> = () => (
 			const howItWorksTitle = node.how_it_works_title;
 			const howItWorksSubtitle = node.how_it_works_subtitle;
 			const howItWorksGroup = node.how_it_works_group;
-
+			const sliderGroup = node.slider_group;
+			console.log("indexxxx-->>",sliderGroup);
 			return (
 				<PrimaryLayout>
 					<SEO title="Home" />
 					{/* End of home seo */}
+					<AdBanner data={sliderGroup} scrollTo="#allProducts" scrollOffset={70} />
 					<HomeBanner
 						banner={banner}
 						bannerTitle={bannerTitle}
