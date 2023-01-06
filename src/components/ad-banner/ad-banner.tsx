@@ -14,6 +14,7 @@ type Props = {
 };
 
 const AdBanner: React.FC<Props> = ({ data, scrollTo, scrollOffset }) => {
+	console.log("AdBanner====>",data);
 	const responsive = {
 		ipad: {
 			breakpoint: { max: 100000, min: 651 },
@@ -27,10 +28,13 @@ const AdBanner: React.FC<Props> = ({ data, scrollTo, scrollOffset }) => {
 
 	return (
 		<Box className="picksyAdBanner" sx={styles.wrapper}>
+			
 			<Carousel ssr={true} responsive={responsive} gutter="10px">
+			
 				{data.map((item: any, index: number) => (
+					
 					<AdBlock
-						key={`adblock-key${index}`}
+						// key={`adblock-key${index}`}
 						tag={item.badge_title}
 						tagBgColor={item.badge_color}
 						bannerImage={item.block_image?.url}

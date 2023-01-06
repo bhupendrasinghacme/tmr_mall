@@ -10,7 +10,8 @@ import HowItWorks from '../components/how-it-works/primary/primary';
 import FeaturedProducts from '../components/featured-products/featured-products-home';
 import TrendingProducts from '../components/trending-products/trending-products-home';
 import CallusBanner from '../components/call-us-banner/call-us-banner';
-import BrandStore from '../components/brandstore/brands';
+import BrandSections from '../components/brandstore/brandss';
+import TrendingProductsHome from '../components/trending-products/trending-products-home';
 
 
 const indexPageStaticQuery = graphql`
@@ -105,6 +106,23 @@ const indexPageStaticQuery = graphql`
 							description
 							image
 						}
+						brand_store_heading
+						brand_store{
+							image_link {
+								... on PRISMIC__ExternalLink {
+									url
+								}
+						 }
+						 image
+					 }
+					 logo_group{
+						image_link {
+							... on PRISMIC__ExternalLink {
+								url
+							}
+					 }
+					 image
+				 }
 					}
 				}
 			}
@@ -131,6 +149,9 @@ const IndexPage: React.FC<{}> = () => (
 			const categoryBlock4 = node.category_block4;
 			const categorySectiontitle5 = node.category_section_title5[0].text;
 			const categoryBlock5 = node.category_block5;
+			const brandStoreHeading = node.brand_store_heading[0].text;
+			const brandSection = node.brand_store;
+			const logoSection = node.logo_group;
 			const callUsBanner = node.call_us_banner;
 			const callUsTitle = node.call_us_title;
 			const callUsButtonText = node.call_us_button_text;
@@ -148,6 +169,9 @@ const IndexPage: React.FC<{}> = () => (
 						bannerSubTitle={bannerSubTitle}
 						bannerButtonText={bannerButtonText}
 					/>
+					<div className='logo-section-wrap'>
+						<BrandSections brandSection={logoSection} />
+					</div>
 					<LatestProducts />
 					<div className='category--wrapper'>
 						<h1>{categorySectiontitle}</h1>
@@ -165,6 +189,8 @@ const IndexPage: React.FC<{}> = () => (
 						howItWorksSubtitle={howItWorksSubtitle}
 						howItWorksGroup={howItWorksGroup}
 					/>
+
+
 					<LatestProducts />
 					<div className='category3--wrapper'>
 						<h1>{categorySectiontitle3}</h1>
@@ -180,11 +206,15 @@ const IndexPage: React.FC<{}> = () => (
 						callUsTitle={callUsTitle}
 						callUsButtonText={callUsButtonText}
 					/>
-				<div className='category5--wrapper'>
+					<div className='category5--wrapper'>
 						<h1>{categorySectiontitle5}</h1>
 						<CategoryBlocks categoryBlock={categoryBlock5}/>
 					</div>
-					<BrandStore />
+					<div className='brand--store-wrap'>
+						<h1 className='title'>{brandStoreHeading}</h1>
+						<BrandSections brandSection={brandSection} />
+					</div>
+					<TrendingProductsHome />
 				</PrimaryLayout>
 			);
 		}}

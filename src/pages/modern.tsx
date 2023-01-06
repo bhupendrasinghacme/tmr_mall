@@ -44,6 +44,7 @@ const ModernHome: React.FC<{}> = () => (
 		render={(data) => {
 			const homeBanner = get(data, "prismic.allHomemoderns.edges[0].node");
 			const adBlocks = get(data, "prismic.allCommons.edges[0].node.ad_blocks");
+			// console.log("adBlocks=======>",adBlocks);
 			return (
 				<SecondaryLayout>
 					<SEO title="Home" />

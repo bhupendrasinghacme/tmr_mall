@@ -4,7 +4,7 @@ import ProductGrid from "../product-grid/product-grid";
 
 const latestStaticQuery = graphql`
 	query {
-		allShopifyProduct(sort: { fields: [createdAt], order: DESC }, limit: 10) {
+		allShopifyProduct(sort: { fields: [createdAt], order: DESC }, limit: 5) {
 			edges {
 				node {
 					id

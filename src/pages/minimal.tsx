@@ -118,11 +118,11 @@ const IndexPage: React.FC<{}> = () => (
 					<HowItWorks items={howItworks} />
 					{/* End of how it works */}
 
-					<CategoryBlocks
-						// title={categorySectionTitle}
-						// shortIntro={categorySectionIntro}
+					{/* <CategoryBlocks
+						title={categorySectionTitle}
+						shortIntro={categorySectionIntro}
 						categoryItems={categoryItems}
-					/>
+					/> */}
 					{/* End of category blocks */}
 
 					<FeaturedProducts withLink={true} />

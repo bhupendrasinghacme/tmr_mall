@@ -45,12 +45,18 @@ const Carousel: React.FunctionComponent<CarouselPropsType> = ({
 	showDots,
 	renderDotsOutside,
 }) => {
+console.log("data============>",ssr,
+	gutter,
+	children,
+	responsive,
+	showDots,
+	renderDotsOutside);
 	return (
 		<Wrapper gutter={gutter}>
 			<MultiCarousel
 				ssr={ssr}
 				infinite={true}
-				arrows={false}
+				arrows={true}
 				swipeable={true}
 				responsive={responsive}
 				showDots={showDots}

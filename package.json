@@ -43,7 +43,7 @@
 		"react-dom": "^16.13.1",
 		"react-helmet": "^6.1.0",
 		"react-icons": "^3.10.0",
-		"react-multi-carousel": "^2.5.5",
+		"react-multi-carousel": "^2.8.2",
 		"react-share": "^4.2.0",
 		"react-spring": "^8.0.27",
 		"react-stickynode": "^2.1.0",
