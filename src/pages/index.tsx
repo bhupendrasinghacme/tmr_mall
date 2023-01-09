@@ -204,10 +204,14 @@ const IndexPage: React.FC<{}> = () => (
 					<SEO title="Home" />
 					{/* End of home seo */}
 
-					<div className='category--wrapper'>
+					<div className='collage-section--wrapper'>
 						<h1>{collageSectionTitle}</h1>
-						<CategoryBlocks categoryBlock={collageGroup1} />
-						<CategoryBlocks categoryBlock={collageGroup2} />
+						<div className='collage--left-wrap'>
+							<CategoryBlocks categoryBlock={collageGroup1} />
+						</div>
+						<div className='collage--right-wrap'>
+							<CategoryBlocks categoryBlock={collageGroup2} />
+						</div>
 					</div>
 					<AdBanner data={sliderGroup} scrollTo="#allProducts" scrollOffset={70} />
 					{/* <HomeBanner
