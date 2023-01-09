@@ -148,7 +148,6 @@ const FooterMenu: React.FC<{ fluid?: boolean }> = ({ fluid }) => (
                         {
                             data.prismic.allFooter_2s.edges?.map((item: any, i: any) => {
                                 return (
-
                                     <div key={i} className='footer__bottom-menu'>
                                         <h4 className="menu__title">{item.node.menu_title[0].text}</h4>
                                         <div className='images_wrap'>
@@ -176,7 +175,6 @@ const FooterMenu: React.FC<{ fluid?: boolean }> = ({ fluid }) => (
                         {
                             data.prismic.allFooter_2s.edges?.map((item: any, i: any) => {
                                 return (
-
                                     <div key={i} className='footer__bottom-menu'>
                                         <h4 className="menu__title">{item.node.footer_2_bottom_title[0].text}</h4>
                                         {
@@ -213,7 +211,6 @@ const FooterMenu: React.FC<{ fluid?: boolean }> = ({ fluid }) => (
                                 )
                             })
                         }
-
                         {
                             data.prismic.allFooter_2s.edges?.map((item: any, i: any) => {
                                 return (
@@ -222,7 +219,6 @@ const FooterMenu: React.FC<{ fluid?: boolean }> = ({ fluid }) => (
                                         {
                                             item.node.footer_2_group_4.map((item3: any, index1: any) => {
                                                 return (
-
                                                     <Link key={"links_3_" + index1} to={item3.link.url != undefined ? item3.link.url : ''}>
                                                         <p>{item3.title[0].text}</p>
                                                     </Link>
@@ -233,7 +229,7 @@ const FooterMenu: React.FC<{ fluid?: boolean }> = ({ fluid }) => (
                                 )
                             })
                         }
-                    </div >
+                    </div>
                 </div>
 
             )
