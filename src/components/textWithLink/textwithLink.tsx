@@ -4,31 +4,31 @@ import { Box, Text, jsx } from 'theme-ui'
 
 const twlStaticQuery = graphql`
 query {
-    prismic {
-        allHomes {
-            edges {
-                node {
-                    top_offers_title
-                    top_offers_group{
-                        heading
-                        sub_heading
-                        text_link {
-                            ... on PRISMIC__ExternalLink {
-                                url
-                            }
-                     }
-                     view_offers_text
-                 }
-            }
-        }
-        }
-    }
+prismic {
+allHomes {
+edges {
+node {
+top_offers_title
+top_offers_group{
+heading
+sub_heading
+text_link {
+... on PRISMIC__ExternalLink {
+url
+}
+}
+view_offers_text
+}
+}
+}
+}
+}
 }
 `;
 
-const getTitleData = (links) => {
-    const data = [];
-    links.forEach((link) => {
+const getTitleData = (links: any) => {
+    const data: any = [];
+    links.forEach((link: any) => {
         data.push({ type: link.view_offers_text, link: link.text_link.url });
     });
     return data;
@@ -70,15 +70,15 @@ const TextWithLink = () => (
 
                                     </div>
                                 </div>
-                                </div>
-            )
-        })
+
+                            )
+                        })
                     }
                 </div >
             )
 
         }}
-/>
+    />
 );
 
 export default TextWithLink;
