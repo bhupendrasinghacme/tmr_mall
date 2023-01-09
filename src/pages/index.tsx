@@ -133,6 +133,33 @@ const indexPageStaticQuery = graphql`
 						add_a_button
 						button_title
 					}
+					collage_section_title
+					collage_group1 {
+						category_slug
+						category_title
+						product_price
+						image
+						imageSharp {
+							childImageSharp {
+								fluid {
+									...GatsbyImageSharpFluid_withWebp_tracedSVG
+								}
+							}
+						}
+					}
+					collage_group2 {
+						category_slug
+						category_title
+						product_price
+						image
+						imageSharp {
+							childImageSharp {
+								fluid {
+									...GatsbyImageSharpFluid_withWebp_tracedSVG
+								}
+							}
+						}
+					}
 				}
 			 }
 			}
@@ -169,11 +196,19 @@ const IndexPage: React.FC<{}> = () => (
 			const howItWorksSubtitle = node.how_it_works_subtitle;
 			const howItWorksGroup = node.how_it_works_group;
 			const sliderGroup = node.slider_group;
-			console.log("indexxxx-->>", sliderGroup);
+			const collageSectionTitle = node.collage_section_title[0].text;
+			const collageGroup1 = node.collage_group1;
+			const collageGroup2 = node.collage_group2;
 			return (
 				<PrimaryLayout>
 					<SEO title="Home" />
 					{/* End of home seo */}
+
+					<div className='category--wrapper'>
+						<h1>{collageSectionTitle}</h1>
+						<CategoryBlocks categoryBlock={collageGroup1} />
+						<CategoryBlocks categoryBlock={collageGroup2} />
+					</div>
 					<AdBanner data={sliderGroup} scrollTo="#allProducts" scrollOffset={70} />
 					{/* <HomeBanner
 						banner={banner}
@@ -190,7 +225,7 @@ const IndexPage: React.FC<{}> = () => (
 					<div className='category--wrapper'>
 						<h1>{categorySectiontitle}</h1>
 						<CategoryBlocks categoryBlock={categoryBlock} />
-					</div>
+					</div> 
 					<div className='category2--wrapper'>
 						<h1>{categorySectiontitle2}</h1>
 						<CategoryBlocks categoryBlock={categoryBlock2} />
