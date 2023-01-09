@@ -169,7 +169,7 @@ const IndexPage: React.FC<{}> = () => (
 			const howItWorksSubtitle = node.how_it_works_subtitle;
 			const howItWorksGroup = node.how_it_works_group;
 			const sliderGroup = node.slider_group;
-			console.log("indexxxx-->>",sliderGroup);
+			console.log("indexxxx-->>", sliderGroup);
 			return (
 				<PrimaryLayout>
 					<SEO title="Home" />
@@ -181,9 +181,11 @@ const IndexPage: React.FC<{}> = () => (
 						bannerSubTitle={bannerSubTitle}
 						bannerButtonText={bannerButtonText}
 					/>
+
 					<div className='logo-section-wrap'>
 						<BrandSections brandSection={logoSection} />
 					</div>
+
 					<LatestProducts />
 					<div className='category--wrapper'>
 						<h1>{categorySectiontitle}</h1>
@@ -191,11 +193,11 @@ const IndexPage: React.FC<{}> = () => (
 					</div>
 					<div className='category2--wrapper'>
 						<h1>{categorySectiontitle2}</h1>
-						<CategoryBlocks categoryBlock={categoryBlock2}/>
+						<CategoryBlocks categoryBlock={categoryBlock2} />
 					</div>
 					<FeaturedProducts />
 					<TrendingProducts />
-					
+
 					<HowItWorks
 						howItWorksTitle={howItWorksTitle}
 						howItWorksSubtitle={howItWorksSubtitle}
@@ -206,13 +208,13 @@ const IndexPage: React.FC<{}> = () => (
 					<LatestProducts />
 					<div className='category3--wrapper'>
 						<h1>{categorySectiontitle3}</h1>
-						<CategoryBlocks categoryBlock={categoryBlock3}/>
+						<CategoryBlocks categoryBlock={categoryBlock3} />
 					</div>
 					<div className='category4--wrapper'>
 						<h1>{categorySectiontitle4}</h1>
-						<CategoryBlocks categoryBlock={categoryBlock4}/>
+						<CategoryBlocks categoryBlock={categoryBlock4} />
 					</div>
-					
+
 					<CallusBanner
 						callUsBanner={callUsBanner}
 						callUsTitle={callUsTitle}
@@ -220,7 +222,7 @@ const IndexPage: React.FC<{}> = () => (
 					/>
 					<div className='category5--wrapper'>
 						<h1>{categorySectiontitle5}</h1>
-						<CategoryBlocks categoryBlock={categoryBlock5}/>
+						<CategoryBlocks categoryBlock={categoryBlock5} />
 					</div>
 					<div className='brand--store-wrap'>
 						<h1 className='title'>{brandStoreHeading}</h1>
