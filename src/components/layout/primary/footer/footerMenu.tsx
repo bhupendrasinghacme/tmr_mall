@@ -83,7 +83,6 @@ prismic {
 }
 }
 `;
-
 const getTitleData = (links: any) => {
     const data: any = [];
     links.forEach((link: any) => {
@@ -101,20 +100,15 @@ const getSocialData = (links: any) => {
 };
 
 const FooterMenu: React.FC<{ fluid?: boolean }> = ({ fluid }) => (
-
     <StaticQuery<GatsbyTypes.Query>
         query={`${footerStaticQuery}`}
         render={(data) => {
-            // console.log("data>><<<<<", data.prismic);
-            // const footerData = get(data, 'prismic.allCommons.edges[0].node');
             const socialData = getSocialData(data.prismic.allCommons.edges?.map((item: any) => item.node)[0].social_links);
             return (
-
                 <div className='footer-block--menu-wrap'>
                     <div className='footer-menu1-wrapper'>
                         {
                             data.prismic.allFooter_2s.edges?.map((item: any, i: any) => {
-                                // console.log("data==>>soumyadav", item)
                                 return (
                                     <div key={"footer_menu_" + i} className='footer__bottom-menu'>
                                         <h4 className="menu__title">{item.node.footer_menu1_title[0].text}</h4>
@@ -134,13 +128,11 @@ const FooterMenu: React.FC<{ fluid?: boolean }> = ({ fluid }) => (
 
                         {
                             data.prismic.allFooter_2s.edges?.map((item: any, i: any) => {
-                                // console.log("data==>>soumyadav", item)
                                 return (
                                     <div key={"key_menu_" + i} className='footer__bottom-menu'>
                                         <h4 className="menu__title">{item.node.footer_menu2_title[0].text}</h4>
                                         {
                                             item.node.footer_menu2_group.map((item3: any, index1: any) => {
-                                                // console.log("fotter22>>item3", item3, "index2", index1)
                                                 return (
                                                     <Link key={'links_2_' + index1} to={item3.link.url}>
                                                         <p>{item3.title[0].text}</p>
@@ -155,21 +147,16 @@ const FooterMenu: React.FC<{ fluid?: boolean }> = ({ fluid }) => (
 
                         {
                             data.prismic.allFooter_2s.edges?.map((item: any, i: any) => {
-                                //console.log("data==>>soumys", data)
                                 return (
 
                                     <div key={i} className='footer__bottom-menu'>
                                         <h4 className="menu__title">{item.node.menu_title[0].text}</h4>
                                         <div className='images_wrap'>
-                                            {/* {console.log("check links data====>", getTitleData(item.node.menu_group)[0])} */}
                                             {item.node.menu_group.map((item2: any, index1: any) => {
-                                                //console.log("item2>>new dat", item2, "index111", index1);
                                                 return (
-
                                                     <Link key={"links_4_" + index1} to={getTitleData(item.node.menu_group)[index1].link}>
                                                         <img className="footer_image" key={index1} src={item2.menu_image_1.url} />
                                                     </Link>
-
                                                 )
                                             })
                                             }
@@ -188,14 +175,12 @@ const FooterMenu: React.FC<{ fluid?: boolean }> = ({ fluid }) => (
                     <div className='footer-menu2-wrapper'>
                         {
                             data.prismic.allFooter_2s.edges?.map((item: any, i: any) => {
-                                // console.log("data==>>soumyadav", item)
                                 return (
 
                                     <div key={i} className='footer__bottom-menu'>
                                         <h4 className="menu__title">{item.node.footer_2_bottom_title[0].text}</h4>
                                         {
                                             item.node.footer_2_group2.map((item3: any, index1: any) => {
-                                                // console.log("fotter22>>item3", item3, "index2", index1)
                                                 return (
 
                                                     <Link key={"links_5_" + index1} to={item3.link.url != undefined ? item3.link.url : ''}>
@@ -210,14 +195,12 @@ const FooterMenu: React.FC<{ fluid?: boolean }> = ({ fluid }) => (
                         }
                         {
                             data.prismic.allFooter_2s.edges?.map((item: any, i: any) => {
-                                // console.log("data==>>soumyadav", item)
                                 return (
 
                                     <div key={i} className='footer__bottom-menu'>
                                         <h4 className="menu__title">{item.node.footer_2_bottom_title1[0].text}</h4>
                                         {
                                             item.node.footer_2_group_3.map((item3: any, index1: any) => {
-                                                // console.log("fotter22>>item3", item3, "index2", index1)
                                                 return (
 
                                                     <Link key={"links_2_" + index1} to={item3.link.url != undefined ? item3.link.url : ''}>
@@ -233,13 +216,11 @@ const FooterMenu: React.FC<{ fluid?: boolean }> = ({ fluid }) => (
 
                         {
                             data.prismic.allFooter_2s.edges?.map((item: any, i: any) => {
-                                // console.log("data==>>soumyadav", item)
                                 return (
                                     <div key={i} className='footer__bottom-menu'>
                                         <h4 className="menu__title">{item.node.footer_2_bottom_title2[0].text}</h4>
                                         {
                                             item.node.footer_2_group_4.map((item3: any, index1: any) => {
-                                                // console.log("fotter22>>item3", item3, "index2", index1)
                                                 return (
 
                                                     <Link key={"links_3_" + index1} to={item3.link.url != undefined ? item3.link.url : ''}>
