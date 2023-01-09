@@ -14,7 +14,7 @@ type Props = {
 };
 
 const AdBanner: React.FC<Props> = ({ data, scrollTo, scrollOffset }) => {
-	console.log("AdBanner====>",data);
+	console.log("AdBanner chk====>",data, scrollTo, scrollOffset);
 	const responsive = {
 		ipad: {
 			breakpoint: { max: 100000, min: 651 },
@@ -33,8 +33,9 @@ const AdBanner: React.FC<Props> = ({ data, scrollTo, scrollOffset }) => {
 			
 				{data.map((item: any, index: number) => (
 					// adblock-key
+					
 					<AdBlock
-						// key={`${index}`}
+						key={`${index}`}
 						tag={item.badge_title}
 						tagBgColor={item.badge_color}
 						bannerImage={item.block_image?.url}
@@ -49,7 +50,9 @@ const AdBanner: React.FC<Props> = ({ data, scrollTo, scrollOffset }) => {
 								<Button variant="white">
 									{RichText.asText(item.button_title)} <ArrowRight />
 								</Button>
+								{console.log("item.block_image?.url",item)}
 							</AnchorLink>
+							
 						}
 					/>
 				))}

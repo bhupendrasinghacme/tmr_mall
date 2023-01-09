@@ -124,11 +124,11 @@ const indexPageStaticQuery = graphql`
 					 }
 					 image
 				 }
-				    slider_group {
+				 slider_group {
 						badge_title
 						badge_color
 						title
-						image
+						block_image
 						short_description
 						add_a_button
 						button_title
@@ -175,12 +175,12 @@ const IndexPage: React.FC<{}> = () => (
 					<SEO title="Home" />
 					{/* End of home seo */}
 					<AdBanner data={sliderGroup} scrollTo="#allProducts" scrollOffset={70} />
-					<HomeBanner
+					{/* <HomeBanner
 						banner={banner}
 						bannerTitle={bannerTitle}
 						bannerSubTitle={bannerSubTitle}
 						bannerButtonText={bannerButtonText}
-					/>
+					/> */}
 
 					<div className='logo-section-wrap'>
 						<BrandSections brandSection={logoSection} />
@@ -195,14 +195,14 @@ const IndexPage: React.FC<{}> = () => (
 						<h1>{categorySectiontitle2}</h1>
 						<CategoryBlocks categoryBlock={categoryBlock2} />
 					</div>
-					<FeaturedProducts />
-					<TrendingProducts />
+					{/* <FeaturedProducts /> */}
+					{/* <TrendingProducts /> */}
 
-					<HowItWorks
+					{/* <HowItWorks
 						howItWorksTitle={howItWorksTitle}
 						howItWorksSubtitle={howItWorksSubtitle}
 						howItWorksGroup={howItWorksGroup}
-					/>
+					/> */}
 
 					<TextWithLink />
 					<LatestProducts />
@@ -215,11 +215,11 @@ const IndexPage: React.FC<{}> = () => (
 						<CategoryBlocks categoryBlock={categoryBlock4} />
 					</div>
 
-					<CallusBanner
+					{/* <CallusBanner
 						callUsBanner={callUsBanner}
 						callUsTitle={callUsTitle}
 						callUsButtonText={callUsButtonText}
-					/>
+					/> */}
 					<div className='category5--wrapper'>
 						<h1>{categorySectiontitle5}</h1>
 						<CategoryBlocks categoryBlock={categoryBlock5} />
@@ -228,7 +228,6 @@ const IndexPage: React.FC<{}> = () => (
 						<h1 className='title'>{brandStoreHeading}</h1>
 						<BrandSections brandSection={brandSection} />
 					</div>
-					<TrendingProductsHome />
 				</PrimaryLayout>
 			);
 		}}

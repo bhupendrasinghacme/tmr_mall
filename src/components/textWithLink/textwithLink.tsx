@@ -50,7 +50,7 @@ const TextWithLink = () => (
                                           {item.node.top_offers_group.map((item2: any, index1: any) => {
                                                 console.log("item2>>new dattwl>>", item2, "index111", index1);
                                                 return (
-                                                    <div>
+                                                    <div className='content_wrap'>
                                                        <div className='heading'>{item2.heading[0].text}</div>
                                                         <div className='sub_heading'>{item2.sub_heading[0].text}</div>
                                                         <Link to={getTitleData(item.node.top_offers_group).link}>
