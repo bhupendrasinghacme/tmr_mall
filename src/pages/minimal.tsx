@@ -107,7 +107,7 @@ const IndexPage: React.FC<{}> = () => (
 					<SEO title="Home" />
 					{/* End of home seo */}
 
-					<HomeBanner
+					<HomeBanner 
 						banner={bannerImage}
 						bannerTitle={bannerTitle}
 						bannerSubTitle={bannerSubTitle}
