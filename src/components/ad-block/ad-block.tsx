@@ -33,7 +33,8 @@ const AdBlock: React.FC<Props> = ({
 			}}
 		>
 			<Box sx={styles.content}>
-				{tag && (
+				
+				{tag && tag[0].text && (
 					<Box
 						as="span"
 						sx={{
@@ -44,9 +45,15 @@ const AdBlock: React.FC<Props> = ({
 						{RichText.asText(tag)}
 					</Box>
 				)}
+				{title && 
 				<Heading as="h3">{RichText.asText(title)}</Heading>
+				}
+				
+				{shortDescription && 
 				<Text as="p">{RichText.asText(shortDescription)}</Text>
-				{btn && btn}
+				}
+				
+				{btn ? btn:''}
 			</Box>
 		</Box>
 	);

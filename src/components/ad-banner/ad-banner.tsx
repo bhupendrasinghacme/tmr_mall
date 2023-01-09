@@ -41,17 +41,17 @@ const AdBanner: React.FC<Props> = ({ data, scrollTo, scrollOffset }) => {
 						bannerImage={item.block_image?.url}
 						title={item.title}
 						shortDescription={item.short_description}
-						btn={
+						btn={item.add_a_button ?
 							<AnchorLink
 								href={scrollTo}
 								style={{ textDecoration: 'none' }}
 								offset={scrollOffset}
 							>
 								<Button variant="white">
-									{RichText.asText(item.button_title)} <ArrowRight />
-								</Button>
-								{console.log("item.block_image?.url",item)}
-							</AnchorLink>
+									{console.log("check button banner===>",item)}
+								{RichText.asText(item.button_title)} <ArrowRight />
+							</Button>	
+							</AnchorLink>:false
 							
 						}
 					/>

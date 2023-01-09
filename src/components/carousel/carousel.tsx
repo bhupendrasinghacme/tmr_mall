@@ -56,7 +56,7 @@ console.log("data============>",ssr,
 			<MultiCarousel
 				ssr={ssr}
 				infinite={true}
-				arrows={true}
+				arrows={false}
 				swipeable={true}
 				responsive={responsive}
 				showDots={showDots}

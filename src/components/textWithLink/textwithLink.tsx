@@ -48,14 +48,19 @@ const TextWithLink = () => (
                                         <h1 className="title">{item.node.top_offers_title[0].text}</h1>
                                        <div className='twl-item-wrap'>
                                           {item.node.top_offers_group.map((item2: any, index1: any) => {
-                                                console.log("item2>>new dattwl>>", item2, "index111", index1);
-                                                return (
+                                              return (
                                                     <div className='content_wrap'>
-                                                       <div className='heading'>{item2.heading[0].text}</div>
+                                                       {item2.heading[0].text &&
+                                                        <div className='heading'>{item2.heading[0].text}</div>
+                                                        }
+                                                        {item2.sub_heading[0].text &&
                                                         <div className='sub_heading'>{item2.sub_heading[0].text}</div>
+                                                        }
+                                                        {item2.view_offers_text[0].text &&
                                                         <Link to={getTitleData(item.node.top_offers_group).link}>
                                                             <div>{item2.view_offers_text[0].text}</div>
                                                         </Link>
+                                                        }
                                                    </div>
                                                   
                                                   )
