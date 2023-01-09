@@ -16,17 +16,17 @@ const getCategoryData = (edges: any): any => {
 
 const BrandSections = ({ brandSection }: any) => {
 	const categories = getCategoryData(brandSection);
-	console.log("categories>>>>",categories);
+	console.log("categories>>>>", categories);
 	return (
-	
-		<Box sx={styles.wrapper}> 
+
+		<Box sx={styles.wrapper}>
 			<Grid sx={styles.grid}>
-				{categories.map((item: any) => (
-					<div className='brand-content-wrap'>
-                      <a href={item.path.url}>
-                          <img className="brand_image" src={item.thumbnail.url} />
-                        </a>
-                    </div>					
+				{categories.map((item: any, index: number) => (
+					<div key={'brand_' + index} className='brand-content-wrap'>
+						<a href={item.path.url}>
+							<img className="brand_image" src={item.thumbnail.url} />
+						</a>
+					</div>
 				))}
 			</Grid>
 		</Box>
