@@ -29,17 +29,17 @@ query {
 const getTitleData = (links) => {
     const data = [];
     links.forEach((link) => {
-    data.push({ type: link.view_offers_text, link: link.text_link.url });
+        data.push({ type: link.view_offers_text, link: link.text_link.url });
     });
     return data;
-    };
-    
+};
+
 
 const TextWithLink = () => (
-	<StaticQuery<GatsbyTypes.Query>
-		query={`${twlStaticQuery}`}
-		render={(data: any) => {
-            return(
+    <StaticQuery<GatsbyTypes.Query>
+        query={`${twlStaticQuery}`}
+        render={(data: any) => {
+            return (
                 <div className='textwithLink-wrapper'>
                         {
                             data.prismic.allHomes.edges?.map((item: any, i: any) => {
@@ -49,7 +49,7 @@ const TextWithLink = () => (
                                        <div className='twl-item-wrap'>
                                           {item.node.top_offers_group.map((item2: any, index1: any) => {
                                               return (
-                                                    <div className='content_wrap'>
+                                                    <div className='content_wrap' key={"links_"+index1}>
                                                        {item2.heading[0].text &&
                                                         <div className='heading'>{item2.heading[0].text}</div>
                                                         }
@@ -70,14 +70,15 @@ const TextWithLink = () => (
                                           
                                         </div>
                                     </div>
-                                )
-                            })
-                        }
-               </div>
+                                </div>
+                            )
+                        })
+                    }
+                </div>
             )
-         
-		}}
-	/>
+
+        }}
+    />
 );
 
 export default TextWithLink;
