@@ -40,41 +40,41 @@ const TextWithLink = () => (
         query={`${twlStaticQuery}`}
         render={(data: any) => {
             return (
-                <div className='textwithLink-wrapper'>
+                <Box className='textwithLink-wrapper'>
                     {
                         data.prismic.allHomes.edges?.map((item: any, i: any) => {
                             return (
-                                <div key={i} className='textwithLink-group'>
+                                <Box key={i} className='textwithLink-group'>
                                     <h1 className="title">{item.node.top_offers_title[i].text}</h1>
-                                    <div className='twl-item-wrap'>
+                                    <Box className='twl-item-wrap'>
                                         {item.node.top_offers_group.map((item2: any, index1: any) => {
                                             return (
-                                                <div className='content_wrap' key={"links_" + index1}>
+                                                <Box className='content_wrap' key={"links_" + index1}>
                                                     {item2.heading[i].text &&
-                                                        <div className='heading'>{item2.heading[i].text}</div>
+                                                        <Box className='heading'>{item2.heading[i].text}</Box>
                                                     }
                                                     {item2.sub_heading[i].text &&
-                                                        <div className='sub_heading'>{item2.sub_heading[i].text}</div>
+                                                        <Box className='sub_heading'>{item2.sub_heading[i].text}</Box>
                                                     }
                                                     {item2.view_offers_text[i].text &&
                                                         <Link to={getTitleData(item.node.top_offers_group)[i].link}>
-                                                            <div>{item2.view_offers_text[i].text}</div>
+                                                            <Box>{item2.view_offers_text[i].text}</Box>
                                                         </Link>
                                                     }
-                                                </div>
+                                                </Box>
 
                                             )
 
                                         })
                                         }
 
-                                    </div>
-                                </div>
+                                    </Box>
+                                </Box>
 
                             )
                         })
                     }
-                </div >
+                </Box >
             )
 
         }}

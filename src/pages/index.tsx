@@ -14,6 +14,7 @@ import BrandSections from '../components/brandstore/brandss';
 import TrendingProductsHome from '../components/trending-products/trending-products-home';
 import AdBanner from "../components/ad-banner/ad-banner";
 import TextWithLink from "../components/textWithLink/textwithLink";
+import { Box } from 'theme-ui';
 
 const indexPageStaticQuery = graphql`
 	query {
@@ -203,16 +204,6 @@ const IndexPage: React.FC<{}> = () => (
 				<PrimaryLayout>
 					<SEO title="Home" />
 					{/* End of home seo */}
-
-					<div className='collage-section--wrapper'>
-						<h1>{collageSectionTitle}</h1>
-						<div className='collage--left-wrap'>
-							<CategoryBlocks categoryBlock={collageGroup1} />
-						</div>
-						<div className='collage--right-wrap'>
-							<CategoryBlocks categoryBlock={collageGroup2} />
-						</div>
-					</div>
 					<AdBanner data={sliderGroup} scrollTo="#allProducts" scrollOffset={70} />
 					{/* <HomeBanner
 						banner={banner}
@@ -259,6 +250,16 @@ const IndexPage: React.FC<{}> = () => (
 						callUsTitle={callUsTitle}
 						callUsButtonText={callUsButtonText}
 					/> */}
+					
+					<Box className='collage-section--wrapper'>
+						<h1>{collageSectionTitle}</h1>
+						<Box className='collage--left-wrap'>
+							<CategoryBlocks categoryBlock={collageGroup1} />
+						</Box>
+						<Box className='collage--right-wrap'>
+							<CategoryBlocks categoryBlock={collageGroup2} />
+						</Box>
+					</Box>
 					<div className='category5--wrapper'>
 						<h1>{categorySectiontitle5}</h1>
 						<CategoryBlocks categoryBlock={categoryBlock5} />
