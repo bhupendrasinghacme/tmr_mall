@@ -51,9 +51,9 @@ const PrimaryLayout: React.FunctionComponent<{
 				<CartStatus btnProps={cartBtnProps} />
 			</animated.div>
 			<BottomContent />
-			{/* <div className='footer_menu_wrap'>
-				<FooterMenu />
-			</div> */}
+			{/* <div className='footer_menu_wrap'> */}
+			<FooterMenu />
+			{/* </div> */}
 			<Footer fluid={fluid} />
 
 		</Box>
