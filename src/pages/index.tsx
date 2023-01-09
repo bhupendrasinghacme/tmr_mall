@@ -185,7 +185,7 @@ const IndexPage: React.FC<{}> = () => (
 					<div className='logo-section-wrap'>
 						<BrandSections brandSection={logoSection} />
 					</div>
-
+ 
 					<LatestProducts />
 					<div className='category--wrapper'>
 						<h1>{categorySectiontitle}</h1>
