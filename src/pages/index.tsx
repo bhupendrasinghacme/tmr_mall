@@ -161,6 +161,33 @@ const indexPageStaticQuery = graphql`
 							}
 						}
 					}
+					collage_section_title2
+					collage_group2_1 {
+						category_slug
+						category_title
+						product_price
+						image
+						imageSharp {
+							childImageSharp {
+								fluid {
+									...GatsbyImageSharpFluid_withWebp_tracedSVG
+								}
+							}
+						}
+					}
+					collage_group2_2 {
+						category_slug
+						category_title
+						product_price
+						image
+						imageSharp {
+							childImageSharp {
+								fluid {
+									...GatsbyImageSharpFluid_withWebp_tracedSVG
+								}
+							}
+						}
+					}
 				}
 			 }
 			}
@@ -200,11 +227,15 @@ const IndexPage: React.FC<{}> = () => (
 			const collageSectionTitle = node.collage_section_title[0].text;
 			const collageGroup1 = node.collage_group1;
 			const collageGroup2 = node.collage_group2;
+			const collageSectionTitle2 = node.collage_section_title2[0].text;
+			const collageGroup3 = node.collage_group2_1;
+			const collageGroup4 = node.collage_group2_2;
 			return (
 				<PrimaryLayout>
 					<SEO title="Home" />
 					{/* End of home seo */}
 					<AdBanner data={sliderGroup} scrollTo="#allProducts" scrollOffset={70} />
+
 					{/* <HomeBanner
 						banner={banner}
 						bannerTitle={bannerTitle}
@@ -217,6 +248,7 @@ const IndexPage: React.FC<{}> = () => (
 					</div>
  
 					<LatestProducts />
+
 					<div className='category--wrapper'>
 						<h1>{categorySectiontitle}</h1>
 						<CategoryBlocks categoryBlock={categoryBlock} />
@@ -225,6 +257,7 @@ const IndexPage: React.FC<{}> = () => (
 						<h1>{categorySectiontitle2}</h1>
 						<CategoryBlocks categoryBlock={categoryBlock2} />
 					</div>
+
 					{/* <FeaturedProducts /> */}
 					{/* <TrendingProducts /> */}
 
@@ -236,6 +269,17 @@ const IndexPage: React.FC<{}> = () => (
 
 					<TextWithLink />
 					<LatestProducts />
+
+					<Box className='collage-section--wrapper'>
+						<h1>{collageSectionTitle}</h1>
+						<Box className='collage--left-wrap'>
+							<CategoryBlocks categoryBlock={collageGroup1} />
+						</Box>
+						<Box className='collage--right-wrap'>
+							<CategoryBlocks categoryBlock={collageGroup2} />
+						</Box>
+					</Box>
+
 					<div className='category3--wrapper'>
 						<h1>{categorySectiontitle3}</h1>
 						<CategoryBlocks categoryBlock={categoryBlock3} />
@@ -251,15 +295,17 @@ const IndexPage: React.FC<{}> = () => (
 						callUsButtonText={callUsButtonText}
 					/> */}
 					
-					<Box className='collage-section--wrapper'>
-						<h1>{collageSectionTitle}</h1>
+					
+					<Box className='collage-section2--wrapper'>
+						<h1>{collageSectionTitle2}</h1>
 						<Box className='collage--left-wrap'>
-							<CategoryBlocks categoryBlock={collageGroup1} />
+							<CategoryBlocks categoryBlock={collageGroup3} />
 						</Box>
 						<Box className='collage--right-wrap'>
-							<CategoryBlocks categoryBlock={collageGroup2} />
+							<CategoryBlocks categoryBlock={collageGroup4} />
 						</Box>
 					</Box>
+
 					<div className='category5--wrapper'>
 						<h1>{categorySectiontitle5}</h1>
 						<CategoryBlocks categoryBlock={categoryBlock5} />
