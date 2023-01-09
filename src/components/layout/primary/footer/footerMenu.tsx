@@ -105,23 +105,23 @@ const FooterMenu: React.FC<{ fluid?: boolean }> = ({ fluid }) => (
         render={(data) => {
             const socialData = getSocialData(data.prismic.allCommons.edges?.map((item: any) => item.node)[0].social_links);
             return (
-                <div className='footer-block--menu-wrap'>
-                    <div className='footer-menu1-wrapper'>
+                <Box className='footer-block--menu-wrap'>
+                    <Box className='footer-menu1-wrapper'>
                         {
                             data.prismic.allFooter_2s.edges?.map((item: any, i: any) => {
                                 return (
-                                    <div key={"footer_menu_" + i} className='footer__bottom-menu'>
+                                    <Box key={"footer_menu_" + i} className='footer__bottom-menu'>
                                         <h4 className="menu__title">{item.node.footer_menu1_title[0].text}</h4>
                                         {
                                             item.node.footer_menu1_group.map((item3: any, index1: any) => {
                                                 return (
                                                     <Link key={"links_l_" + index1} to={item3.link.url}>
-                                                        <p>{item3.title[0].text}</p>
+                                                        <Text>{item3.title[0].text}</Text>
                                                     </Link>
                                                 )
                                             })
                                         }
-                                    </div>
+                                    </Box>
                                 )
                             })
                         }
@@ -129,18 +129,18 @@ const FooterMenu: React.FC<{ fluid?: boolean }> = ({ fluid }) => (
                         {
                             data.prismic.allFooter_2s.edges?.map((item: any, i: any) => {
                                 return (
-                                    <div key={"key_menu_" + i} className='footer__bottom-menu'>
+                                    <Box key={"key_menu_" + i} className='footer__bottom-menu'>
                                         <h4 className="menu__title">{item.node.footer_menu2_title[0].text}</h4>
                                         {
                                             item.node.footer_menu2_group.map((item3: any, index1: any) => {
                                                 return (
                                                     <Link key={'links_2_' + index1} to={item3.link.url}>
-                                                        <p>{item3.title[0].text}</p>
+                                                        <Text>{item3.title[0].text}</Text>
                                                     </Link>
                                                 )
                                             })
                                         }
-                                    </div>
+                                    </Box>
                                 )
                             })
                         }
@@ -148,9 +148,9 @@ const FooterMenu: React.FC<{ fluid?: boolean }> = ({ fluid }) => (
                         {
                             data.prismic.allFooter_2s.edges?.map((item: any, i: any) => {
                                 return (
-                                    <div key={i} className='footer__bottom-menu'>
+                                    <Box key={i} className='footer__bottom-menu'>
                                         <h4 className="menu__title">{item.node.menu_title[0].text}</h4>
-                                        <div className='images_wrap'>
+                                        <Box className='images_wrap'>
                                             {item.node.menu_group.map((item2: any, index1: any) => {
                                                 return (
                                                     <Link key={"links_4_" + index1} to={getTitleData(item.node.menu_group)[index1].link}>
@@ -159,23 +159,23 @@ const FooterMenu: React.FC<{ fluid?: boolean }> = ({ fluid }) => (
                                                 )
                                             })
                                             }
-                                        </div>
-                                    </div>
+                                        </Box>
+                                    </Box>
                                 )
                             })
                         }
 
-                        <div className="socialmenu footer__bottom-menu">
-                            <div className='share--link'>Share links</div>
+                        <Box className="socialmenu footer__bottom-menu">
+                            <Box className='share--link'>Share links</Box>
                             <SocialLinks items={socialData} />
-                        </div>
-                    </div>
+                        </Box>
+                    </Box>
 
-                    <div className='footer-menu2-wrapper'>
+                    <Box className='footer-menu2-wrapper'>
                         {
                             data.prismic.allFooter_2s.edges?.map((item: any, i: any) => {
                                 return (
-                                    <div key={i} className='footer__bottom-menu'>
+                                    <Box key={i} className='footer__bottom-menu'>
                                         <h4 className="menu__title">{item.node.footer_2_bottom_title[0].text}</h4>
                                         {
                                             item.node.footer_2_group2.map((item3: any, index1: any) => {
@@ -187,7 +187,7 @@ const FooterMenu: React.FC<{ fluid?: boolean }> = ({ fluid }) => (
                                                 )
                                             })
                                         }
-                                    </div>
+                                    </Box>
                                 )
                             })
                         }
@@ -195,7 +195,7 @@ const FooterMenu: React.FC<{ fluid?: boolean }> = ({ fluid }) => (
                             data.prismic.allFooter_2s.edges?.map((item: any, i: any) => {
                                 return (
 
-                                    <div key={i} className='footer__bottom-menu'>
+                                    <Box key={i} className='footer__bottom-menu'>
                                         <h4 className="menu__title">{item.node.footer_2_bottom_title1[0].text}</h4>
                                         {
                                             item.node.footer_2_group_3.map((item3: any, index1: any) => {
@@ -207,14 +207,14 @@ const FooterMenu: React.FC<{ fluid?: boolean }> = ({ fluid }) => (
                                                 )
                                             })
                                         }
-                                    </div>
+                                    </Box>
                                 )
                             })
                         }
                         {
                             data.prismic.allFooter_2s.edges?.map((item: any, i: any) => {
                                 return (
-                                    <div key={i} className='footer__bottom-menu'>
+                                    <Box key={i} className='footer__bottom-menu'>
                                         <h4 className="menu__title">{item.node.footer_2_bottom_title2[0].text}</h4>
                                         {
                                             item.node.footer_2_group_4.map((item3: any, index1: any) => {
@@ -225,12 +225,12 @@ const FooterMenu: React.FC<{ fluid?: boolean }> = ({ fluid }) => (
                                                 )
                                             })
                                         }
-                                    </div>
+                                    </Box>
                                 )
                             })
                         }
-                    </div>
-                </div>
+                    </Box>
+                </Box>
 
             )
 
