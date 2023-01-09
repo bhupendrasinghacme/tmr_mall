@@ -13,7 +13,7 @@ import CallusBanner from '../components/call-us-banner/call-us-banner';
 import BrandSections from '../components/brandstore/brandss';
 import TrendingProductsHome from '../components/trending-products/trending-products-home';
 import AdBanner from "../components/ad-banner/ad-banner";
-
+import TextWithLink from "../components/textWithLink/textwithLink";
 
 const indexPageStaticQuery = graphql`
 	query {
@@ -202,7 +202,7 @@ const IndexPage: React.FC<{}> = () => (
 						howItWorksGroup={howItWorksGroup}
 					/>
 
-
+					<TextWithLink />
 					<LatestProducts />
 					<div className='category3--wrapper'>
 						<h1>{categorySectiontitle3}</h1>
