@@ -58,7 +58,7 @@ const TextWithLink = () => (
                                                     }
                                                     {item2.view_offers_text[i].text &&
                                                         <Link to={getTitleData(item.node.top_offers_group)[i].link}>
-                                                            <div>{item2.view_offers_text[0].text}</div>
+                                                            <div>{item2.view_offers_text[i].text}</div>
                                                         </Link>
                                                     }
                                                 </div>
