@@ -52,7 +52,7 @@ const PrimaryLayout: React.FunctionComponent<{
 			</animated.div>
 			<BottomContent />
 			{/* <div className='footer_menu_wrap'> */}
-			<FooterMenu />
+			<FooterMenu fluid={fluid} />
 			{/* </div> */}
 			<Footer fluid={fluid} />
 
