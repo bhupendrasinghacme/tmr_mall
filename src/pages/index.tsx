@@ -14,7 +14,7 @@ import BrandSections from '../components/brandstore/brandss';
 import TrendingProductsHome from '../components/trending-products/trending-products-home';
 import AdBanner from "../components/ad-banner/ad-banner";
 import TextWithLink from "../components/textWithLink/textwithLink";
-import { Box } from 'theme-ui';
+import { Box, Text } from 'theme-ui';
 
 const indexPageStaticQuery = graphql`
 	query {
@@ -243,20 +243,20 @@ const IndexPage: React.FC<{}> = () => (
 						bannerButtonText={bannerButtonText}
 					/> */}
 
-					<div className='logo-section-wrap'>
+					<Box className='logo-section-wrap'>
 						<BrandSections brandSection={logoSection} />
-					</div>
- 
+					</Box>
+
 					<LatestProducts />
 
-					<div className='category--wrapper'>
-						<h1>{categorySectiontitle}</h1>
+					<Box className='category--wrapper'>
+						<Text>{categorySectiontitle}</Text>
 						<CategoryBlocks categoryBlock={categoryBlock} />
-					</div> 
-					<div className='category2--wrapper'>
-						<h1>{categorySectiontitle2}</h1>
+					</Box>
+					<Box className='category2--wrapper'>
+						<Text>{categorySectiontitle2}</Text>
 						<CategoryBlocks categoryBlock={categoryBlock2} />
-					</div>
+					</Box>
 
 					{/* <FeaturedProducts /> */}
 					{/* <TrendingProducts /> */}
@@ -271,7 +271,7 @@ const IndexPage: React.FC<{}> = () => (
 					<LatestProducts />
 
 					<Box className='collage-section--wrapper'>
-						<h1>{collageSectionTitle}</h1>
+						<Text>{collageSectionTitle}</Text>
 						<Box className='collage--left-wrap'>
 							<CategoryBlocks categoryBlock={collageGroup1} />
 						</Box>
@@ -280,24 +280,24 @@ const IndexPage: React.FC<{}> = () => (
 						</Box>
 					</Box>
 
-					<div className='category3--wrapper'>
-						<h1>{categorySectiontitle3}</h1>
+					<Box className='category3--wrapper'>
+						<Text>{categorySectiontitle3}</Text>
 						<CategoryBlocks categoryBlock={categoryBlock3} />
-					</div>
-					<div className='category4--wrapper'>
-						<h1>{categorySectiontitle4}</h1>
+					</Box>
+					<Box className='category4--wrapper'>
+						<Text>{categorySectiontitle4}</Text>
 						<CategoryBlocks categoryBlock={categoryBlock4} />
-					</div>
+					</Box>
 
 					{/* <CallusBanner
 						callUsBanner={callUsBanner}
 						callUsTitle={callUsTitle}
 						callUsButtonText={callUsButtonText}
 					/> */}
-					
-					
+
+
 					<Box className='collage-section2--wrapper'>
-						<h1>{collageSectionTitle2}</h1>
+						<Text>{collageSectionTitle2}</Text>
 						<Box className='collage--left-wrap'>
 							<CategoryBlocks categoryBlock={collageGroup3} />
 						</Box>
@@ -306,14 +306,14 @@ const IndexPage: React.FC<{}> = () => (
 						</Box>
 					</Box>
 
-					<div className='category5--wrapper'>
-						<h1>{categorySectiontitle5}</h1>
+					<Box className='category5--wrapper'>
+						<Text>{categorySectiontitle5}</Text>
 						<CategoryBlocks categoryBlock={categoryBlock5} />
-					</div>
-					<div className='brand--store-wrap'>
-						<h1 className='title'>{brandStoreHeading}</h1>
+					</Box>
+					<Box className='brand--store-wrap'>
+						<Text className='title'>{brandStoreHeading}</Text>
 						<BrandSections brandSection={brandSection} />
-					</div>  
+					</Box>
 				</PrimaryLayout>
 			);
 		}}
