@@ -232,7 +232,7 @@ const IndexPage: React.FC<{}> = () => (
 			const collageGroup4 = node.collage_group2_2;
 			return (
 				<PrimaryLayout>
-					{console.log("hole data check collageGroup3=======>", collageGroup3, collageGroup4)}
+					{/* {console.log("hole data check collageGroup3=======>", collageGroup3, collageGroup4)} */}
 					<SEO title="Home" />
 					{/* End of home seo */}
 					<AdBanner data={sliderGroup} scrollTo="#allProducts" scrollOffset={70} />
@@ -300,14 +300,14 @@ const IndexPage: React.FC<{}> = () => (
 					<Box className='collage-section2--wrapper'>
 						{collageSectionTitle2 != '' && <Text>{collageSectionTitle2}</Text>}
 
-						<Box className='collage--left-wrap'>
+						{/* <Box className='collage--left-wrap'>
 							{collageGroup3.length && <CategoryBlocks categoryBlock={collageGroup3} />}
 
-						</Box>
-						<Box className='collage--right-wrap'>
+						</Box> */}
+						{/* <Box className='collage--right-wrap'>
 							{collageGroup4.length && <CategoryBlocks categoryBlock={collageGroup4} />}
 
-						</Box>
+						</Box> */}
 					</Box>
 
 					<Box className='category5--wrapper'>
