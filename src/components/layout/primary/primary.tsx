@@ -7,9 +7,8 @@ import CartStatus from '../../cart/index';
 import Container from '../../container/container';
 import Header from './header/header';
 import Footer from './footer/footer';
-import FooterMenu from './footer/FooterMenu';
+import FooterMenu from './footer/footerMenu';
 import styles from './primary.style';
-import bottomContent from './footer/bottomContent';
 import BottomContent from './footer/bottomContent';
 
 
@@ -29,10 +28,7 @@ const PrimaryLayout: React.FunctionComponent<{
 	return (
 		<Box
 			as="main"
-			sx={{
-				backgroundColor: bgColor ? bgColor : 'transparent',
-				...styles.main,
-			}}
+			sx={{ backgroundColor: bgColor ? bgColor : 'transparent', ...styles.main, }}
 		>
 			<Header
 				fluid={fluid}
@@ -45,9 +41,7 @@ const PrimaryLayout: React.FunctionComponent<{
 				onEnter={() => setCartBar(true)}
 				onLeave={() => setCartBar(false)}
 			/>
-			<animated.div
-				style={{ ...cartBtnProps, position: 'relative', zIndex: 9999 }}
-			>
+			<animated.div style={{ ...cartBtnProps, position: 'relative', zIndex: 9999 }}>
 				<CartStatus btnProps={cartBtnProps} />
 			</animated.div>
 			<BottomContent />
@@ -55,7 +49,6 @@ const PrimaryLayout: React.FunctionComponent<{
 			<FooterMenu fluid={fluid} />
 			{/* </div> */}
 			<Footer fluid={fluid} />
-
 		</Box>
 	);
 };

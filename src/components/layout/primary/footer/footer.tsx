@@ -29,9 +29,9 @@ const footerStaticQuery = graphql`
 	}
 `;
 
-const getSocialData = (links) => {
-	const data = [];
-	links.forEach((link) => {
+const getSocialData = (links: any) => {
+	const data: any = [];
+	links.forEach((link: any) => {
 		data.push({ type: link.social_type, link: link.social_link.url });
 	});
 	return data;
@@ -44,7 +44,8 @@ const Footer: React.FC<{ fluid?: boolean }> = ({ fluid }) => (
 			const footerData = get(data, 'prismic.allCommons.edges[0].node');
 			const socialData = getSocialData(footerData.social_links);
 			return (
-				<Box as="footer" className="last_footer" sx={styles.footer}>
+				// sx = { styles.footer }
+				<Box as="footer" className="last_footer" >
 					<Container fluid={fluid}>
 						<Text className="copyright" sx={styles.copyright}>
 							{RichText.render(footerData.copyright_text)}
