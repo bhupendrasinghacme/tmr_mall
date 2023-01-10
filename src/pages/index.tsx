@@ -309,7 +309,6 @@ const IndexPage: React.FC<{}> = () => (
 
 						</Box> */}
 					</Box>
-
 					<Box className='category5--wrapper'>
 						<Text>{categorySectiontitle5}</Text>
 						<CategoryBlocks categoryBlock={categoryBlock5} />
