@@ -38,9 +38,7 @@ const ProductPage: React.FC<any> = ({
 		listView = false,
 	} = product;
 
-	const {
-		store: { client },
-	} = useContext(CartContext);
+	const { store: { client }, } = useContext(CartContext);
 
 	const { products, add, update } = useContext(LocalCartContext);
 	const counterRef = useRef(null!);
@@ -59,10 +57,10 @@ const ProductPage: React.FC<any> = ({
 	const [available, setAvailable] = useState(productVariant.availableForSale);
 	const checkAvailability = useCallback(
 		(productId) => {
-			client.product.fetch(productId).then((fetchedProduct) => {
+			client.product.fetch(productId).then((fetchedProduct: any) => {
 				// this checks the currently selected variant for availability
 				const result = fetchedProduct.variants.filter(
-					(variant) => variant.id === productVariant.shopifyId
+					(variant: any) => variant.id === productVariant.shopifyId
 				);
 				if (result && result.length > 0) {
 					setAvailable(result[0]?.available);
@@ -153,7 +151,7 @@ const ProductPage: React.FC<any> = ({
 								</Text>
 								<Box
 									className={quantity > 0 && showCounter ? 'isActive' : ''}
-									sx={styles.cart}
+									sx={styles.cartArea}
 								>
 									{!quantity && (
 										<Button

@@ -40,18 +40,17 @@ const TextWithLink = () => (
         query={`${twlStaticQuery}`}
         render={(data: any) => {
             return (
-
                 <Box className='textwithLink-wrapper'>
                     {
                         data.prismic.allHomes.edges?.map((item: any, i: any) => {
                             return (
                                 <Box key={i} className='textwithLink-group'>
-                                    <h1 className="title">{item.node.top_offers_title[i].text}</h1>
+                                    <Text className="title">{item.node.top_offers_title[i].text}</Text>
                                     <Box className='twl-item-wrap' sx={{ marginTop: 10, marginBottom: 20 }}>
                                         <Grid gap={2} columns={[2, null, 4]}>
                                             {item.node.top_offers_group.map((item2: any, index1: any) => {
+                                                // console.log("check link data ==================>", item.node.top_offers_group)
                                                 return (
-
                                                     <Card
                                                         sx={{
                                                             maxWidth: 256,
@@ -66,15 +65,13 @@ const TextWithLink = () => (
                                                                 <Text className='sub_heading'>{item2.sub_heading[0].text}</Text>
                                                             }
                                                             {item2.view_offers_text[0].text &&
-                                                                <Link to={getTitleData(item.node.top_offers_group)[0].link}>
+                                                                <Link to={getTitleData(item.node.top_offers_group)[0].link != undefined ? getTitleData(item.node.top_offers_group)[0].link : ''}>
                                                                     <Text>{item2.view_offers_text[0].text}</Text>
                                                                 </Link>
                                                             }
                                                         </Box>
                                                     </Card>
-
                                                 )
-
                                             })
                                             }
                                         </Grid>

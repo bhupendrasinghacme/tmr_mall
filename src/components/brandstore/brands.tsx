@@ -37,6 +37,7 @@ const BrandStore = () => (
     <StaticQuery<GatsbyTypes.Query>
         query={`${brandStaticQuery}`}
         render={(data: any) => {
+            console.log("brand store data========>", data);
             return (
                 <Box className='home-brandstore-wrap'>
                     {
