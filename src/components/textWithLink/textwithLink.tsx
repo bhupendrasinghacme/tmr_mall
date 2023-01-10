@@ -40,44 +40,44 @@ const TextWithLink = () => (
         query={`${twlStaticQuery}`}
         render={(data: any) => {
             return (
- 
+
                 <Box className='textwithLink-wrapper'>
                     {
                         data.prismic.allHomes.edges?.map((item: any, i: any) => {
                             return (
                                 <Box key={i} className='textwithLink-group'>
                                     <h1 className="title">{item.node.top_offers_title[i].text}</h1>
-                                    <Box className='twl-item-wrap' sx={{marginTop:10,marginBottom:20}}>
-                                    <Grid gap={2} columns={[2, null, 4]}>
-                                        {item.node.top_offers_group.map((item2: any, index1: any) => {
-                                            return (
-                                                
-                                                <Card
-                                                sx={{
-                                                  maxWidth: 256,
-                                                  backgroundColor:'#ffb',
-                                                  padding:30
-                                                }}>
-                                                <Box className='content_wrap' key={"links_" + index1}>
-                                                    {item2.heading[i].text &&
-                                                        <Text className='heading'>{item2.heading[i].text}</Text>
-                                                    }
-                                                    {item2.sub_heading[i].text &&
-                                                        <Text className='sub_heading'>{item2.sub_heading[i].text}</Text>
-                                                    }
-                                                    {item2.view_offers_text[i].text &&
-                                                        <Link to={getTitleData(item.node.top_offers_group)[i].link}>
-                                                            <Text>{item2.view_offers_text[i].text}</Text>
-                                                        </Link>
-                                                    }
-                                                </Box>
-                                                </Card>
-                                               
-                                            )
+                                    <Box className='twl-item-wrap' sx={{ marginTop: 10, marginBottom: 20 }}>
+                                        <Grid gap={2} columns={[2, null, 4]}>
+                                            {item.node.top_offers_group.map((item2: any, index1: any) => {
+                                                return (
 
-                                        })
-                                        }
-                                          </Grid>
+                                                    <Card
+                                                        sx={{
+                                                            maxWidth: 256,
+                                                            backgroundColor: '#ffb',
+                                                            padding: 30
+                                                        }} key={"links_" + index1}>
+                                                        <Box className='content_wrap'>
+                                                            {item2.heading[0].text &&
+                                                                <Text className='heading'>{item2.heading[0].text}</Text>
+                                                            }
+                                                            {item2.sub_heading[0].text &&
+                                                                <Text className='sub_heading'>{item2.sub_heading[0].text}</Text>
+                                                            }
+                                                            {item2.view_offers_text[0].text &&
+                                                                <Link to={getTitleData(item.node.top_offers_group)[0].link}>
+                                                                    <Text>{item2.view_offers_text[0].text}</Text>
+                                                                </Link>
+                                                            }
+                                                        </Box>
+                                                    </Card>
+
+                                                )
+
+                                            })
+                                            }
+                                        </Grid>
                                     </Box>
                                 </Box>
 
@@ -85,7 +85,7 @@ const TextWithLink = () => (
                         })
                     }
                 </Box >
-            
+
             )
 
         }}
