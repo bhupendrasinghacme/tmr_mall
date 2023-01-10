@@ -298,7 +298,8 @@ const IndexPage: React.FC<{}> = () => (
 
 
 					<Box className='collage-section2--wrapper'>
-						<Text>{collageSectionTitle2}</Text>
+						{collageSectionTitle2 != '' && <Text>{collageSectionTitle2}</Text>}
+
 						<Box className='collage--left-wrap'>
 							{collageGroup3.length && <CategoryBlocks categoryBlock={collageGroup3} />}
 
