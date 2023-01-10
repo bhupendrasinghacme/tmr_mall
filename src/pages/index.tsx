@@ -200,10 +200,10 @@ const IndexPage: React.FC<{}> = () => (
 		query={`${indexPageStaticQuery}`}
 		render={(data) => {
 			const node = get(data, 'prismic.allHomes.edges[0].node');
-			const banner = node.banner.url;
-			const bannerTitle = node.banner_title;
-			const bannerSubTitle = node.banner_subtitle;
-			const bannerButtonText = node.banner_button_text;
+			// const banner = node.banner.url;
+			// const bannerTitle = node.banner_title;
+			// const bannerSubTitle = node.banner_subtitle;
+			// const bannerButtonText = node.banner_button_text;
 			const categorySectiontitle = node.category_section_title[0].text;
 			const categoryBlock = node.category_block;
 			const categorySectiontitle2 = node.category_section_title2[0].text;
@@ -217,12 +217,12 @@ const IndexPage: React.FC<{}> = () => (
 			const brandStoreHeading = node.brand_store_heading[0].text;
 			const brandSection = node.brand_store;
 			const logoSection = node.logo_group;
-			const callUsBanner = node.call_us_banner;
-			const callUsTitle = node.call_us_title;
-			const callUsButtonText = node.call_us_button_text;
-			const howItWorksTitle = node.how_it_works_title;
-			const howItWorksSubtitle = node.how_it_works_subtitle;
-			const howItWorksGroup = node.how_it_works_group;
+			// const callUsBanner = node.call_us_banner;
+			// const callUsTitle = node.call_us_title;
+			// const callUsButtonText = node.call_us_button_text;
+			// const howItWorksTitle = node.how_it_works_title;
+			// const howItWorksSubtitle = node.how_it_works_subtitle;
+			// const howItWorksGroup = node.how_it_works_group;
 			const sliderGroup = node.slider_group;
 			const collageSectionTitle = node.collage_section_title[0].text;
 			const collageGroup1 = node.collage_group1;
@@ -232,7 +232,7 @@ const IndexPage: React.FC<{}> = () => (
 			const collageGroup4 = node.collage_group2_2;
 			return (
 				<PrimaryLayout>
-					{/* {console.log("hole data check collageGroup3=======>", collageGroup3, collageGroup4)} */}
+					{console.log("hole data check collageGroup3=======>", data)}
 					<SEO title="Home" />
 					{/* End of home seo */}
 					<AdBanner data={sliderGroup} scrollTo="#allProducts" scrollOffset={70} />
@@ -300,14 +300,14 @@ const IndexPage: React.FC<{}> = () => (
 					<Box className='collage-section2--wrapper'>
 						{collageSectionTitle2 != '' && <Text>{collageSectionTitle2}</Text>}
 
-						{/* <Box className='collage--left-wrap'>
+						<Box className='collage--left-wrap'>
 							{collageGroup3.length && <CategoryBlocks categoryBlock={collageGroup3} />}
 
-						</Box> */}
-						{/* <Box className='collage--right-wrap'>
+						</Box>
+						<Box className='collage--right-wrap'>
 							{collageGroup4.length && <CategoryBlocks categoryBlock={collageGroup4} />}
 
-						</Box> */}
+						</Box>
 					</Box>
 					<Box className='category5--wrapper'>
 						<Text>{categorySectiontitle5}</Text>
