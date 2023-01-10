@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { Link, StaticQuery, graphql } from 'gatsby';
-import { Box, Text, jsx } from 'theme-ui'
-
+import { Box, Text, jsx, Card } from 'theme-ui'
+import { Grid } from 'theme-ui'
 const twlStaticQuery = graphql`
 query {
 prismic {
@@ -40,34 +40,44 @@ const TextWithLink = () => (
         query={`${twlStaticQuery}`}
         render={(data: any) => {
             return (
+ 
                 <Box className='textwithLink-wrapper'>
                     {
                         data.prismic.allHomes.edges?.map((item: any, i: any) => {
                             return (
                                 <Box key={i} className='textwithLink-group'>
                                     <h1 className="title">{item.node.top_offers_title[i].text}</h1>
-                                    <Box className='twl-item-wrap'>
+                                    <Box className='twl-item-wrap' sx={{marginTop:10,marginBottom:20}}>
+                                    <Grid gap={2} columns={[2, null, 4]}>
                                         {item.node.top_offers_group.map((item2: any, index1: any) => {
                                             return (
+                                                
+                                                <Card
+                                                sx={{
+                                                  maxWidth: 256,
+                                                  backgroundColor:'#ffb',
+                                                  padding:30
+                                                }}>
                                                 <Box className='content_wrap' key={"links_" + index1}>
                                                     {item2.heading[i].text &&
-                                                        <Box className='heading'>{item2.heading[i].text}</Box>
+                                                        <Text className='heading'>{item2.heading[i].text}</Text>
                                                     }
                                                     {item2.sub_heading[i].text &&
-                                                        <Box className='sub_heading'>{item2.sub_heading[i].text}</Box>
+                                                        <Text className='sub_heading'>{item2.sub_heading[i].text}</Text>
                                                     }
                                                     {item2.view_offers_text[i].text &&
                                                         <Link to={getTitleData(item.node.top_offers_group)[i].link}>
-                                                            <Box>{item2.view_offers_text[i].text}</Box>
+                                                            <Text>{item2.view_offers_text[i].text}</Text>
                                                         </Link>
                                                     }
                                                 </Box>
-
+                                                </Card>
+                                               
                                             )
 
                                         })
                                         }
-
+                                          </Grid>
                                     </Box>
                                 </Box>
 
@@ -75,6 +85,7 @@ const TextWithLink = () => (
                         })
                     }
                 </Box >
+            
             )
 
         }}
