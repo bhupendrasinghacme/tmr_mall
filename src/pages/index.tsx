@@ -313,7 +313,7 @@ const IndexPage: React.FC<{}> = () => (
 					<div className='brand--store-wrap'>
 						<h1 className='title'>{brandStoreHeading}</h1>
 						<BrandSections brandSection={brandSection} />
-					</div>
+					</div>  
 				</PrimaryLayout>
 			);
 		}}
