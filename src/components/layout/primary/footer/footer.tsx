@@ -52,6 +52,7 @@ const Footer: React.FC<{ fluid?: boolean }> = ({ fluid }) => (
 						</Text>
 						<SocialLinks items={socialData} />
 					</Container>
+
 				</Box>
 			);
 		}}
